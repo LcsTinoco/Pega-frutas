@@ -1,0 +1,70 @@
+{
+	"name": "Doce",
+	"plugin-id": "Sprite",
+	"sid": 481073825651668,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 64,
+						"height": 64,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 2992126,
+						"collisionPoly": {
+							"points": [
+								0.578125,
+								0.03125,
+								0.765625,
+								0.28125,
+								0.84375,
+								0.421875,
+								0.859375,
+								0.484375,
+								0.859375,
+								0.578125,
+								0.734375,
+								0.9375,
+								0.265625,
+								0.921875,
+								0.140625,
+								0.578125,
+								0.140625,
+								0.484375,
+								0.15625,
+								0.4375,
+								0.234375,
+								0.28125,
+								0.34375,
+								0.140625,
+								0.46875,
+								0.046875
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 520301715292858,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

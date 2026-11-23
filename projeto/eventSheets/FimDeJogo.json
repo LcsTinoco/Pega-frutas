@@ -1,0 +1,189 @@
+{
+	"name": "FimDeJogo",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "Globais"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 598773926344359
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "TextoFinal",
+					"sid": 568562840069318,
+					"parameters": {
+						"text": "\"Você pegou \" & Pontos & \" pontos!\" & newline & \"Recorde: \" & Recorde & (NovoRecorde = 1 ? newline & \"NOVO RECORDE!\" : \"\")"
+					}
+				}
+			],
+			"sid": 780976067009390
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Mouse",
+					"sid": 744933408486606,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "BotaoReiniciar"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 303232249129729,
+					"parameters": {
+						"audio-file": {
+							"path": "clique"
+						},
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 350606681391126,
+					"parameters": {
+						"layout": "Jogo"
+					}
+				}
+			],
+			"sid": 851328752283787
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "key-is-down",
+					"objectClass": "Teclado",
+					"sid": 611710008177088,
+					"parameters": {
+						"key": 13
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 976577315536933,
+					"parameters": {
+						"audio-file": {
+							"path": "clique"
+						},
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 598908544674194,
+					"parameters": {
+						"layout": "Jogo"
+					}
+				}
+			],
+			"sid": 709073608843011
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 938495619384029
+				}
+			],
+			"actions": [
+				{
+					"id": "set-opacity",
+					"objectClass": "BotaoReiniciar",
+					"sid": 740053641884104,
+					"parameters": {
+						"opacity": "100"
+					}
+				}
+			],
+			"sid": 706351455290310
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "cursor-is-over-object",
+					"objectClass": "Mouse",
+					"sid": 482487433883371,
+					"parameters": {
+						"object": "BotaoReiniciar"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-opacity",
+					"objectClass": "BotaoReiniciar",
+					"sid": 919880457122263,
+					"parameters": {
+						"opacity": "75"
+					}
+				}
+			],
+			"sid": 387136066838420
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "cursor-is-over-object",
+					"objectClass": "Mouse",
+					"sid": 899936919966756,
+					"parameters": {
+						"object": "BotaoReiniciar"
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 764368297410948
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 866107173051458,
+					"parameters": {
+						"audio-file": {
+							"path": "hover"
+						},
+						"loop": "not-looping",
+						"volume": "-6",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 989595701121584
+		}
+	],
+	"sid": 228652269807381
+}

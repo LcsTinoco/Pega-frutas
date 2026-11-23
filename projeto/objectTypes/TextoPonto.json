@@ -1,0 +1,16 @@
+{
+	"name": "TextoPonto",
+	"plugin-id": "Text",
+	"sid": 827539777030342,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Fade",
+			"name": "Fade",
+			"sid": 816057104159016
+		}
+	],
+	"effectTypes": []
+}

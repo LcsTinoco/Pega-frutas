@@ -1,0 +1,10 @@
+{
+	"name": "TextoRecorde",
+	"plugin-id": "Text",
+	"sid": 419686060657646,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": []
+}

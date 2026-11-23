@@ -1,0 +1,342 @@
+{
+	"name": "Menu",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "Globais"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Mouse",
+					"sid": 260411252849817,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "BotaoPlay"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 439433485931066,
+					"parameters": {
+						"audio-file": {
+							"path": "clique"
+						},
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 504680476923279,
+					"parameters": {
+						"layout": "Jogo"
+					}
+				}
+			],
+			"sid": 660116890639078
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Teclado",
+					"sid": 746167016403780,
+					"parameters": {
+						"key": 13
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 760916201456262,
+					"parameters": {
+						"audio-file": {
+							"path": "clique"
+						},
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 225163481272100,
+					"parameters": {
+						"layout": "Jogo"
+					}
+				}
+			],
+			"sid": 683558813495163
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 266810883839486
+				}
+			],
+			"actions": [
+				{
+					"id": "set-opacity",
+					"objectClass": "BotaoPlay",
+					"sid": 533853956231609,
+					"parameters": {
+						"opacity": "100"
+					}
+				}
+			],
+			"sid": 574773432331959
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "cursor-is-over-object",
+					"objectClass": "Mouse",
+					"sid": 144756515845448,
+					"parameters": {
+						"object": "BotaoPlay"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-opacity",
+					"objectClass": "BotaoPlay",
+					"sid": 110475473172896,
+					"parameters": {
+						"opacity": "75"
+					}
+				}
+			],
+			"sid": 552145310886518
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "cursor-is-over-object",
+					"objectClass": "Mouse",
+					"sid": 250341282380590,
+					"parameters": {
+						"object": "BotaoPlay"
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 268346135122991
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 395450743929652,
+					"parameters": {
+						"audio-file": {
+							"path": "hover"
+						},
+						"loop": "not-looping",
+						"volume": "-6",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 292905531580286
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 633238953108817
+				}
+			],
+			"actions": [
+				{
+					"id": "get-item",
+					"objectClass": "LocalStorage",
+					"sid": 126080668503499,
+					"parameters": {
+						"key": "\"recorde\""
+					}
+				}
+			],
+			"sid": 837245498546068
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-item-get",
+					"objectClass": "LocalStorage",
+					"sid": 540746815731417,
+					"parameters": {
+						"key": "\"recorde\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 597822009453838,
+					"parameters": {
+						"variable": "Recorde",
+						"value": "int(LocalStorage.ItemValue)"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "TextoRecorde",
+					"sid": 449837505300732,
+					"parameters": {
+						"text": "\"Recorde: \" & Recorde"
+					}
+				}
+			],
+			"sid": 304781363539731
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Mouse",
+					"sid": 335375127246340,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "BotaoComoJogar"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 151416848847017,
+					"parameters": {
+						"audio-file": {
+							"path": "clique"
+						},
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 230762385673960,
+					"parameters": {
+						"layout": "ComoJogar"
+					}
+				}
+			],
+			"sid": 478140554486238
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 710536868507597
+				}
+			],
+			"actions": [
+				{
+					"id": "set-opacity",
+					"objectClass": "BotaoComoJogar",
+					"sid": 149241266419768,
+					"parameters": {
+						"opacity": "100"
+					}
+				}
+			],
+			"sid": 503932714239817
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "cursor-is-over-object",
+					"objectClass": "Mouse",
+					"sid": 148395710589451,
+					"parameters": {
+						"object": "BotaoComoJogar"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-opacity",
+					"objectClass": "BotaoComoJogar",
+					"sid": 163021998700849,
+					"parameters": {
+						"opacity": "75"
+					}
+				}
+			],
+			"sid": 203332417453850
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "cursor-is-over-object",
+					"objectClass": "Mouse",
+					"sid": 620766016965454,
+					"parameters": {
+						"object": "BotaoComoJogar"
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 394249006000753
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 708390697856710,
+					"parameters": {
+						"audio-file": {
+							"path": "hover"
+						},
+						"loop": "not-looping",
+						"volume": "-6",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 655480510316189
+		}
+	],
+	"sid": 766008629507547
+}

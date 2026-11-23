@@ -1,0 +1,1035 @@
+{
+	"name": "Jogo",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "Globais"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 352727071028104
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 280713538803459,
+					"parameters": {
+						"variable": "Pontos",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 271344169301406,
+					"parameters": {
+						"variable": "Vida",
+						"value": "3"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 289074990904485,
+					"parameters": {
+						"variable": "VelBase",
+						"value": "200"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 412717237152007,
+					"parameters": {
+						"audio-file": {
+							"path": "musica"
+						},
+						"loop": "looping",
+						"volume": "-12",
+						"stereo-pan": "0",
+						"tag-optional": "\"musica\""
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 454672728332644,
+					"parameters": {
+						"variable": "NovoRecorde",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 996222391944325,
+					"parameters": {
+						"variable": "Pausado",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-time-scale",
+					"objectClass": "System",
+					"sid": 227885707243709,
+					"parameters": {
+						"time-scale": "1"
+					}
+				},
+				{
+					"id": "set-master-volume",
+					"objectClass": "Audio",
+					"sid": 698774546639733,
+					"parameters": {
+						"db": "0"
+					}
+				}
+			],
+			"sid": 934506255841649
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "key-is-down",
+					"objectClass": "Teclado",
+					"sid": 961888521510071,
+					"parameters": {
+						"key": 37
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-x",
+					"objectClass": "Cesta",
+					"sid": 650511402613560,
+					"parameters": {
+						"x": "Cesta.X - 450 * dt"
+					}
+				}
+			],
+			"sid": 909825355140935
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "key-is-down",
+					"objectClass": "Teclado",
+					"sid": 312271143130196,
+					"parameters": {
+						"key": 39
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-x",
+					"objectClass": "Cesta",
+					"sid": 163445222043356,
+					"parameters": {
+						"x": "Cesta.X + 450 * dt"
+					}
+				}
+			],
+			"sid": 488506669950591
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 262301559910347
+				}
+			],
+			"actions": [
+				{
+					"id": "set-x",
+					"objectClass": "Cesta",
+					"sid": 959736590230868,
+					"parameters": {
+						"x": "clamp(Cesta.X, 64, 736)"
+					}
+				}
+			],
+			"sid": 962743031445035
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-x-seconds",
+					"objectClass": "System",
+					"sid": 752954874802203,
+					"parameters": {
+						"interval-seconds": "1.0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 239627158787897,
+					"parameters": {
+						"object-to-create": "Fruta",
+						"layer": "\"Jogo\"",
+						"x": "random(40, 760)",
+						"y": "-40",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "set-animation-frame",
+					"objectClass": "Fruta",
+					"sid": 586769683239908,
+					"parameters": {
+						"frame-number": "floor(random(3))"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Fruta",
+					"sid": 194199424768234,
+					"parameters": {
+						"instance-variable": "Velocidade",
+						"value": "VelBase + random(0, 80)"
+					}
+				}
+			],
+			"sid": 873090749951129
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 963703206047447
+				}
+			],
+			"actions": [
+				{
+					"id": "set-y",
+					"objectClass": "Fruta",
+					"sid": 639394143123213,
+					"parameters": {
+						"y": "Fruta.Y + Fruta.Velocidade * dt"
+					}
+				},
+				{
+					"id": "set-y",
+					"objectClass": "Cupcake",
+					"sid": 149017087466754,
+					"parameters": {
+						"y": "Cupcake.Y + Cupcake.Velocidade * dt"
+					}
+				},
+				{
+					"id": "set-y",
+					"objectClass": "Coracao",
+					"sid": 803130663424058,
+					"parameters": {
+						"y": "Coracao.Y + VelBase * 0.8 * dt"
+					}
+				}
+			],
+			"sid": 736256047509704
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Fruta",
+					"sid": 274840199903522,
+					"parameters": {
+						"object": "Cesta"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 895939467146808,
+					"parameters": {
+						"object-to-create": "TextoPonto",
+						"layer": "\"HUD\"",
+						"x": "Fruta.X - 40",
+						"y": "Fruta.Y - 20",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "TextoPonto",
+					"sid": 301132144624158,
+					"parameters": {
+						"text": "\"+10\""
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "Fruta",
+					"sid": 828011119571926
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 679074097013147,
+					"parameters": {
+						"audio-file": {
+							"path": "coleta"
+						},
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 458031951039710,
+					"parameters": {
+						"variable": "Pontos",
+						"value": "10"
+					}
+				}
+			],
+			"sid": 366115560372759
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-y",
+					"objectClass": "Fruta",
+					"sid": 617771790556794,
+					"parameters": {
+						"comparison": 4,
+						"y-co-ordinate": "530"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "Fruta",
+					"sid": 342881281272847
+				},
+				{
+					"id": "subtract-from-eventvar",
+					"objectClass": "System",
+					"sid": 494885923389616,
+					"parameters": {
+						"variable": "Vida",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 223275927733357
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-x-seconds",
+					"objectClass": "System",
+					"sid": 918482560469577,
+					"parameters": {
+						"interval-seconds": "10"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 673543341841023,
+					"parameters": {
+						"object-to-create": "Cupcake",
+						"layer": "\"Jogo\"",
+						"x": "random(40, 760)",
+						"y": "-40",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Cupcake",
+					"sid": 929451971917950,
+					"parameters": {
+						"instance-variable": "Velocidade",
+						"value": "VelBase + random(0, 80)"
+					}
+				}
+			],
+			"sid": 866491798378127
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Cupcake",
+					"sid": 108132059608364,
+					"parameters": {
+						"object": "Cesta"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 641053288044334,
+					"parameters": {
+						"object-to-create": "TextoPonto",
+						"layer": "\"HUD\"",
+						"x": "Cupcake.X - 40",
+						"y": "Cupcake.Y - 20",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "TextoPonto",
+					"sid": 382080759130858,
+					"parameters": {
+						"text": "\"+50\""
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "Cupcake",
+					"sid": 631641398617023
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 626338064995625,
+					"parameters": {
+						"audio-file": {
+							"path": "coleta"
+						},
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 897775218417478,
+					"parameters": {
+						"variable": "Pontos",
+						"value": "50"
+					}
+				}
+			],
+			"sid": 817897025159031
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-y",
+					"objectClass": "Cupcake",
+					"sid": 720184195749518,
+					"parameters": {
+						"comparison": 4,
+						"y-co-ordinate": "530"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "Cupcake",
+					"sid": 741664794222726
+				}
+			],
+			"sid": 905724504168582
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 109044362504634,
+					"parameters": {
+						"variable": "Vida",
+						"comparison": 3,
+						"value": "0"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 810829860423608,
+					"parameters": {
+						"variable": "Pontos",
+						"comparison": 4,
+						"value": "Recorde"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 551645893313965,
+					"parameters": {
+						"variable": "Recorde",
+						"value": "Pontos"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 591664235974256,
+					"parameters": {
+						"variable": "NovoRecorde",
+						"value": "1"
+					}
+				},
+				{
+					"id": "set-item",
+					"objectClass": "LocalStorage",
+					"sid": 586485375827377,
+					"parameters": {
+						"key": "\"recorde\"",
+						"value": "Pontos"
+					}
+				}
+			],
+			"sid": 161014843889228
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 821719930229812,
+					"parameters": {
+						"variable": "Vida",
+						"comparison": 3,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "stop",
+					"objectClass": "Audio",
+					"sid": 345750973024663,
+					"parameters": {
+						"tag": "\"musica\""
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 335196218182320,
+					"parameters": {
+						"audio-file": {
+							"path": "derrota"
+						},
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 628727747900807,
+					"parameters": {
+						"layout": "FimDeJogo"
+					}
+				}
+			],
+			"sid": 472903947917448
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 140547707305504
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "TextoHUD",
+					"sid": 855265716326128,
+					"parameters": {
+						"text": "\"Pontos: \" & Pontos "
+					}
+				},
+				{
+					"id": "set-animation-frame",
+					"objectClass": "IconeVidas",
+					"sid": 780607946253288,
+					"parameters": {
+						"frame-number": "max(Vida, 0) "
+					}
+				},
+				{
+					"id": "set-x",
+					"objectClass": "Nuvem",
+					"sid": 388030359692120,
+					"parameters": {
+						"x": "(Nuvem.X + 100 + Nuvem.VelNuvem * dt) % 1000 - 100"
+					}
+				}
+			],
+			"sid": 551450880651885
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-x-seconds",
+					"objectClass": "System",
+					"sid": 809350857073204,
+					"parameters": {
+						"interval-seconds": "10"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 635127135070097,
+					"parameters": {
+						"variable": "VelBase",
+						"comparison": 2,
+						"value": "600"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 895629208390532,
+					"parameters": {
+						"variable": "VelBase",
+						"value": "30"
+					}
+				}
+			],
+			"sid": 122178380828984
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-x-seconds",
+					"objectClass": "System",
+					"sid": 553840117526144,
+					"parameters": {
+						"interval-seconds": "3"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 659185016951851,
+					"parameters": {
+						"object-to-create": "Bomba",
+						"layer": "\"Jogo\"",
+						"x": "random(40, 760)",
+						"y": "-40",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Bomba",
+					"sid": 103148327183258,
+					"parameters": {
+						"instance-variable": "Velocidade",
+						"value": "VelBase"
+					}
+				}
+			],
+			"sid": 455781262497397
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 912267245261120
+				}
+			],
+			"actions": [
+				{
+					"id": "set-y",
+					"objectClass": "Bomba",
+					"sid": 424102358969258,
+					"parameters": {
+						"y": "Bomba.Y + Bomba.Velocidade * dt"
+					}
+				}
+			],
+			"sid": 901041932745824
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Bomba",
+					"sid": 593477719357151,
+					"parameters": {
+						"object": "Cesta"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 751240575739486,
+					"parameters": {
+						"object-to-create": "Explosao",
+						"layer": "\"Jogo\"",
+						"x": "Bomba.X",
+						"y": "Bomba.Y",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 157645427820481,
+					"parameters": {
+						"audio-file": {
+							"path": "explosao"
+						},
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "Bomba",
+					"sid": 651392310860428
+				},
+				{
+					"id": "subtract-from-eventvar",
+					"objectClass": "System",
+					"sid": 950114565881231,
+					"parameters": {
+						"variable": "Vida",
+						"value": "1"
+					}
+				},
+				{
+					"id": "set-opacity",
+					"objectClass": "Cesta",
+					"sid": 203062274189496,
+					"parameters": {
+						"opacity": "40"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 356125543835434,
+					"parameters": {
+						"seconds": "0.3",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "set-opacity",
+					"objectClass": "Cesta",
+					"sid": 185399644810465,
+					"parameters": {
+						"opacity": "100"
+					}
+				}
+			],
+			"sid": 249565317527578
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-animation-finished",
+					"objectClass": "Explosao",
+					"sid": 422853703257105,
+					"parameters": {
+						"animation": "\"Animation 1\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "Explosao",
+					"sid": 301500640879770
+				}
+			],
+			"sid": 807472809917033
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-y",
+					"objectClass": "Bomba",
+					"sid": 294353110231083,
+					"parameters": {
+						"comparison": 4,
+						"y-co-ordinate": "530"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "Bomba",
+					"sid": 503760071534278
+				}
+			],
+			"sid": 361597626494042
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-x-seconds",
+					"objectClass": "System",
+					"sid": 196745777085347,
+					"parameters": {
+						"interval-seconds": "10"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 433305153004297,
+					"parameters": {
+						"variable": "Vida",
+						"comparison": 2,
+						"value": "3"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 739001977619981,
+					"parameters": {
+						"object-to-create": "Coracao",
+						"layer": "\"Jogo\"",
+						"x": "random(40, 760)",
+						"y": "-40",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				}
+			],
+			"sid": 207500230213736
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Coracao",
+					"sid": 459604835396280,
+					"parameters": {
+						"object": "Cesta"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 289735267321468,
+					"parameters": {
+						"object-to-create": "TextoPonto",
+						"layer": "\"HUD\"",
+						"x": "Coracao.X - 40",
+						"y": "Coracao.Y - 20",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 691303180160514,
+					"parameters": {
+						"object-to-create": "TextoVida",
+						"layer": "\"HUD\"",
+						"x": "Coracao.X - 10",
+						"y": "Coracao.Y - 35",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "TextoPonto",
+					"sid": 294745435993718,
+					"parameters": {
+						"text": "\"+20\""
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "TextoVida",
+					"sid": 992495280570238,
+					"parameters": {
+						"text": "\"+💖\""
+					}
+				},
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 538313533625352,
+					"parameters": {
+						"variable": "Pontos",
+						"value": "20"
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "Coracao",
+					"sid": 207881162830282
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 695017563486314,
+					"parameters": {
+						"variable": "Vida",
+						"value": "min(Vida + 1, 3)"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 261857112819970,
+					"parameters": {
+						"audio-file": {
+							"path": "vida"
+						},
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 499760596299667
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-y",
+					"objectClass": "Coracao",
+					"sid": 175247995936948,
+					"parameters": {
+						"comparison": 4,
+						"y-co-ordinate": "530"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "Coracao",
+					"sid": 592207277983416
+				}
+			],
+			"sid": 199935790521952
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Teclado",
+					"sid": 196281146440691,
+					"parameters": {
+						"key": 80
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 319438824468622,
+					"parameters": {
+						"variable": "Pausado",
+						"value": "1 - Pausado"
+					}
+				},
+				{
+					"id": "set-time-scale",
+					"objectClass": "System",
+					"sid": 370706567968251,
+					"parameters": {
+						"time-scale": "1 - Pausado"
+					}
+				},
+				{
+					"id": "set-opacity",
+					"objectClass": "TextoPausa",
+					"sid": 596159299249189,
+					"parameters": {
+						"opacity": "Pausado * 100"
+					}
+				},
+				{
+					"id": "set-master-volume",
+					"objectClass": "Audio",
+					"sid": 413236214889659,
+					"parameters": {
+						"db": "-50 * Pausado"
+					}
+				}
+			],
+			"sid": 140545017974702
+		}
+	],
+	"sid": 378532301261373
+}

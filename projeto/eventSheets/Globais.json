@@ -1,0 +1,66 @@
+{
+	"name": "Globais",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "Pontos",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 551177516997931
+		},
+		{
+			"eventType": "variable",
+			"name": "Vida",
+			"type": "number",
+			"initialValue": "3",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 237779002126967
+		},
+		{
+			"eventType": "variable",
+			"name": "VelBase",
+			"type": "number",
+			"initialValue": "200",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 387132796048441
+		},
+		{
+			"eventType": "variable",
+			"name": "Recorde",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 446467349954870
+		},
+		{
+			"eventType": "variable",
+			"name": "NovoRecorde",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 827956588448710
+		},
+		{
+			"eventType": "variable",
+			"name": "Pausado",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 954029623644160
+		}
+	],
+	"sid": 548333929934658
+}

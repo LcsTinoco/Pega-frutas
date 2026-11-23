@@ -1,0 +1,16 @@
+{
+	"name": "TextoVida",
+	"plugin-id": "Text",
+	"sid": 613728209332898,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Fade",
+			"name": "Fade",
+			"sid": 129640706345047
+		}
+	],
+	"effectTypes": []
+}

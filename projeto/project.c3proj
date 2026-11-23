@@ -1,0 +1,349 @@
+{
+	"projectFormatVersion": 1,
+	"savedWithRelease": 50604,
+	"name": "Pega Frutas",
+	"runtime": "c3",
+	"useWorker": "auto",
+	"bundleAddons": false,
+	"usedAddons": [
+		{
+			"type": "plugin",
+			"id": "Audio",
+			"name": "Áudio",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Keyboard",
+			"name": "Teclado",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "LocalStorage",
+			"name": "Armazenamento local",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Mouse",
+			"name": "Mouse",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Sprite",
+			"name": "Sprite",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Text",
+			"name": "Texto",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Fade",
+			"name": "Esmaecer",
+			"author": "Scirra",
+			"bundled": false
+		}
+	],
+	"uniqueId": "gboj7tg1ydt",
+	"objectTypes": {
+		"items": [
+			"Fundo",
+			"Cesta",
+			"Fruta",
+			"Titulo",
+			"BotaoPlay",
+			"BotaoReiniciar",
+			"Mouse",
+			"Teclado",
+			"TextoAjuda",
+			"TextoHUD",
+			"TextoFim",
+			"TextoFinal",
+			"Bomba",
+			"Explosao",
+			"Audio",
+			"TextoPonto",
+			"IconeVidas",
+			"LocalStorage",
+			"TextoRecorde",
+			"Coracao",
+			"TextoVida",
+			"TextoPausa",
+			"Nuvem",
+			"Cupcake",
+			"BotaoComoJogar",
+			"BotaoInicio",
+			"TextoPontuação",
+			"Maca",
+			"Limao",
+			"Laranja",
+			"S2",
+			"Doce",
+			"Boom"
+		],
+		"subfolders": []
+	},
+	"functionsName": "Funções",
+	"autosaveData": null,
+	"containers": [],
+	"families": {
+		"items": [],
+		"subfolders": []
+	},
+	"layouts": {
+		"items": [
+			"Menu",
+			"Jogo",
+			"FimDeJogo",
+			"ComoJogar"
+		],
+		"subfolders": []
+	},
+	"eventSheets": {
+		"items": [
+			"Menu",
+			"Jogo",
+			"FimDeJogo",
+			"Globais",
+			"ComoJogar"
+		],
+		"subfolders": []
+	},
+	"rootFileFolders": {
+		"script": {
+			"items": [],
+			"subfolders": []
+		},
+		"sound": {
+			"items": [
+				{
+					"name": "clique.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 441587937637000,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "coleta.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 339701014357369,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "explosao.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 573065681141262,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "derrota.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 284453981335848,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "hover.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 447289684763440,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "vida.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 445782371166702,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
+			"subfolders": []
+		},
+		"music": {
+			"items": [
+				{
+					"name": "musica.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 433351610223992,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
+			"subfolders": []
+		},
+		"video": {
+			"items": [],
+			"subfolders": []
+		},
+		"font": {
+			"items": [],
+			"subfolders": []
+		},
+		"icon": {
+			"items": [
+				{
+					"name": "icon-16.png",
+					"type": "image/png",
+					"sid": 330230813452018,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-32.png",
+					"type": "image/png",
+					"sid": 959610670367663,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-64.png",
+					"type": "image/png",
+					"sid": 268397606723628,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-128.png",
+					"type": "image/png",
+					"sid": 137131618702358,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-256.png",
+					"type": "image/png",
+					"sid": 435699249227504,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-512.png",
+					"type": "image/png",
+					"sid": 454874824581556,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "loading-logo.png",
+					"type": "image/png",
+					"sid": 694482455454802,
+					"icon-info": {
+						"purpose": "loading-logo"
+					}
+				}
+			],
+			"subfolders": []
+		},
+		"general": {
+			"items": [],
+			"subfolders": []
+		}
+	},
+	"timelines": {
+		"items": [
+			"Linha do tempo 1"
+		],
+		"subfolders": [
+			{
+				"items": [],
+				"subfolders": []
+			}
+		]
+	},
+	"flowcharts": {
+		"items": [
+			"Fluxograma 1"
+		],
+		"subfolders": []
+	},
+	"models3d": {
+		"items": [],
+		"subfolders": []
+	},
+	"properties": {
+		"description": "",
+		"version": "1.0.0.0",
+		"autoIncrementVersion": false,
+		"author": "",
+		"authorEmail": "",
+		"authorWebsite": "",
+		"appId": "",
+		"saveLLMContextFile": true,
+		"pixelRounding": false,
+		"fov": 0.7853981633974483,
+		"useLoaderLayout": false,
+		"fullscreenMode": "letterbox-scale",
+		"fullscreenQuality": "high",
+		"viewportFit": "auto",
+		"backgroundColor": [
+			0,
+			0,
+			0,
+			0
+		],
+		"splashColor": [
+			1,
+			1,
+			1,
+			0
+		],
+		"useThemeColor": false,
+		"themeColor": [
+			1,
+			1,
+			1,
+			0
+		],
+		"orientations": "landscape",
+		"webgpu": "auto",
+		"multitexturing": "auto",
+		"gpuPreference": "high-performance",
+		"framerateMode": "vsync",
+		"fixedFramerate": 30,
+		"sampling": "trilinear",
+		"downscaling": "medium",
+		"renderingMode": "auto",
+		"anisotropicFiltering": "auto",
+		"zNear": 10,
+		"zFar": 100000,
+		"maxSpriteSheetSize": 2048,
+		"loaderStyle": "splash",
+		"preloadSounds": true,
+		"uidAllocationMode": "increment",
+		"zAxisScale": "regular",
+		"cordovaiOSScheme": "app",
+		"cordovaAndroidScheme": "https",
+		"exportFileStructure": "folders",
+		"scriptsType": "module"
+	},
+	"viewportWidth": 800,
+	"viewportHeight": 600,
+	"firstLayout": "Menu"
+}

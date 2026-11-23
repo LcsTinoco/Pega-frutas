@@ -1,0 +1,92 @@
+{
+	"name": "Boom",
+	"plugin-id": "Sprite",
+	"sid": 606166790496108,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 64,
+						"height": 64,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 4991548,
+						"collisionPoly": {
+							"points": [
+								0.765625,
+								0.03125,
+								0.859375,
+								0.03125,
+								0.90625,
+								0.078125,
+								0.921875,
+								0.125,
+								0.890625,
+								0.625,
+								0.875,
+								0.703125,
+								0.84375,
+								0.78125,
+								0.8125,
+								0.828125,
+								0.734375,
+								0.90625,
+								0.65625,
+								0.953125,
+								0.609375,
+								0.96875,
+								0.390625,
+								0.96875,
+								0.3125,
+								0.9375,
+								0.265625,
+								0.90625,
+								0.203125,
+								0.84375,
+								0.171875,
+								0.796875,
+								0.140625,
+								0.734375,
+								0.125,
+								0.6875,
+								0.125,
+								0.5,
+								0.140625,
+								0.453125,
+								0.171875,
+								0.390625,
+								0.234375,
+								0.3125,
+								0.296875,
+								0.265625,
+								0.625,
+								0.078125
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 775397969140871,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}
